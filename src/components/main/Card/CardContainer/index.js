@@ -30,8 +30,7 @@ export const CardContainer = styled.div`
       box-shadow: 0 8px 16px 3px rgba(0, 0, 0, 0.6);
       transform: translateY(-3px) scale(1.05) rotateX(15deg);
     `}
-  &:hover,
-  &:active {
+  &:hover {
     opacity: 1 !important;
     box-shadow: 0 8px 16px 3px rgba(0, 0, 0, 0.6);
     transform: translateY(-3px) scale(1.05) rotateX(15deg);

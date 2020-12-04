@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Container from '../../components/main/Card/Container';
 import ListView from '../../components/common/ListView';
@@ -13,13 +13,17 @@ function CardList() {
   const containerRef = useRef();
   const dispatch = useDispatch();
   const { date, data } = useStoreManager();
+  const [key, setKey] = useState(false);
   const { selectedDate, lastSavedTime, cardId } = useSelector(
     (state) => state.Journal,
   );
 
   useEffect(() => {
-    if (containerRef.current)
+    if (containerRef.current) {
       containerRef.current.scrollToItem(cardId, 'start');
+      setKey(!key);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [cardId]);
 
   useEffect(() => {
@@ -63,7 +67,8 @@ function CardList() {
               className={styles.cardList}
               width={width}
               height={180}
-              itemSize={150}
+              // itemSize={width / date.length}
+              itemSize={250}
               itemCount={date.length}
               layout="horizontal"
               direction="rtl"
