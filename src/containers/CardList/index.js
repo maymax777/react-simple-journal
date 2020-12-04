@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Container from '../../components/main/Card/Container';
 import ListView from '../../components/common/ListView';
@@ -18,15 +18,13 @@ function CardList() {
   );
 
   useEffect(() => {
-    console.log({ cardId });
     if (containerRef.current)
-      containerRef.current.scrollToItem(cardId - 2, 'start');
+      containerRef.current.scrollToItem(cardId, 'start');
   }, [cardId]);
 
   useEffect(() => {
     const handleWheel = (evt) => {
       const count = evt.deltaY > 0 ? 1 : -1;
-      console.log(count);
       if (cardId + count > 0)
         dispatch({
           type: actions.UPDATE_CARD_ID,
@@ -65,8 +63,7 @@ function CardList() {
               className={styles.cardList}
               width={width}
               height={180}
-              // itemSize={width / date.length}
-              itemSize={date.length - 50}
+              itemSize={150}
               itemCount={date.length}
               layout="horizontal"
               direction="rtl"
