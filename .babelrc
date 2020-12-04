@@ -1,0 +1,17 @@
+{
+  "plugins": [
+    [
+      "babel-plugin-module-resolver",
+      {
+        "root": ["./src"],
+        "alias": {
+          "@components": "./src/components",
+          "@containers": "./src/containers",
+          "@services": "./src/services",
+          "@utils": "./src/utils",
+          "tests": "./src/tests"
+        }
+      }
+    ]
+  ]
+}

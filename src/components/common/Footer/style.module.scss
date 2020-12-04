@@ -1,0 +1,24 @@
+// @import '../../../assets/scss/style.module.scss';
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 56px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.05);
+
+  text-align: center;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: -0.02em;
+
+  color: #ffffff;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
